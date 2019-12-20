@@ -1,0 +1,12 @@
+suite_namespace: frontend\tests\acceptance
+actor: AcceptanceTester
+modules:
+    enabled:
+        - WebDriver:
+            host: selenium
+            browser: chrome
+            url: http://front/
+        - Yii2:
+            part: [orm, fixtures]
+            entryScript: index-test.php
+

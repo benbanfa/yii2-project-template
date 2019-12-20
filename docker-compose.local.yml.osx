@@ -1,0 +1,17 @@
+version: '2'
+volumes:
+  docker-sync:
+    external:
+      name: "${COMPOSE_PROJECT_NAME}-sync"
+services:
+  mysql:
+    ports:
+      - 3306:3306
+  php:
+    volumes:
+      - docker-sync:/code:nocopy
+  nginx:
+    ports:
+      - 8000:80
+    volumes:
+      - docker-sync:/code:nocopy

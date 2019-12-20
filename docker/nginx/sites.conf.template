@@ -1,0 +1,19 @@
+server {
+    listen 80;
+    server_name www.${DEV_DOMAIN};
+    root /code/frontend/web;
+    index index.php;
+
+    include include/php.conf;
+    include include/static.conf;
+}
+
+server {
+    listen 80;
+    server_name admin.${DEV_DOMAIN};
+    root /code/backend/web;
+    index index.php;
+
+    include include/php.conf;
+    include include/static.conf;
+}

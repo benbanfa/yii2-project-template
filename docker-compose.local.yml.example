@@ -1,0 +1,8 @@
+version: '2'
+services:
+  php:
+    volumes:
+      - .:/code
+  nginx:
+    volumes:
+      - .:/code

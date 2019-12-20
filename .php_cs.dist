@@ -1,0 +1,26 @@
+<?php
+
+$finder = PhpCsFixer\Finder::create()
+    ->in(__DIR__.'/backend')
+    ->in(__DIR__.'/common')
+    ->in(__DIR__.'/config')
+    ->in(__DIR__.'/console')
+    ->in(__DIR__.'/frontend')
+    ->exclude('tests/_support/_generated')
+;
+
+return PhpCsFixer\Config::create()
+    ->setRiskyAllowed(true)
+    ->setRules([
+        '@Symfony' => true,
+        'array_indentation' => true,
+        'ordered_imports' => true,
+        'no_unused_imports' => true,
+        'phpdoc_summary' => false,
+        'phpdoc_to_comment' => false,
+        'method_argument_space' => [
+            'on_multiline' => 'ensure_fully_multiline',
+        ],
+    ])
+    ->setFinder($finder)
+;

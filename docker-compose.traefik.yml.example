@@ -1,0 +1,21 @@
+version: '2'
+networks:
+  traefik_default:
+    external: true
+services:
+  redis:
+    labels:
+      - traefik.enable=false
+  mysql:
+    labels:
+      - traefik.enable=false
+  php:
+    labels:
+      - traefik.enable=false
+  nginx:
+    networks:
+      - traefik_default
+    labels:
+      - "traefik.docker.network=traefik_default"
+      - "traefik.port=80"
+      - "traefik.frontend.rule=HostRegexp:{subdomain:[a-z]+}.${DEV_DOMAIN}"

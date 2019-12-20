@@ -1,0 +1,20 @@
+YII_ENV=dev
+YII_DEBUG=1
+
+# 开发数据库配置
+DB_HOST=mysql
+DB_DATABASE=app
+DB_USERNAME=app_user
+DB_PASSWORD=app_pass
+
+# 测试数据库配置
+DB_TEST_HOST=mysql
+DB_TEST_DATABASE=app_test
+DB_TEST_USERNAME=app_test_user
+DB_TEST_PASSWORD=app_test_pass
+
+# Redis配置
+REDIS_HOST=redis
+REDIS_PORT=6379
+REDIS_PASSWORD=1234
+REDIS_DATABASE=0

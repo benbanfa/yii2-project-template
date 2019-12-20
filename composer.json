@@ -1,0 +1,42 @@
+{
+    "name": "benbanfa/yii2-project-template",
+    "description": "benbanfa/yii2-project-template",
+    "keywords": ["yii2", "framework", "project template"],
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "autoload": {
+        "psr-4": {
+            "common\\": "common/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.3.0",
+        "benbanfa/exclude-composer-assets": "dev-master",
+        "yiisoft/yii2": "~2.0.14",
+        "yiisoft/yii2-bootstrap": "~2.0.0",
+        "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
+        "vlucas/phpdotenv": "^3",
+        "yiisoft/yii2-redis": "^2.0",
+        "yiisoft/yii2-queue": "^2.2",
+        "symfony/options-resolver": "^4"
+    },
+    "require-dev": {
+        "yiisoft/yii2-debug": "~2.1.0",
+        "yiisoft/yii2-gii": "~2.1.0",
+        "yiisoft/yii2-faker": "~2.0.0",
+        "codeception/codeception": "^3",
+        "phpunit/phpunit": "^8",
+        "codeception/verify": "~1.0.0",
+        "symfony/browser-kit": ">=2.7 <=4.2.4",
+        "facebook/webdriver": "^1.6"
+    },
+    "config": {
+        "process-timeout": 1800,
+        "fxp-asset": {
+            "enabled": false
+        }
+    },
+    "repositories": [
+    ]
+}
