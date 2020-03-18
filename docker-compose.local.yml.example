@@ -3,6 +3,7 @@ services:
   php:
     volumes:
       - .:/code
+      # - ./php-local.ini:/usr/local/etc/php/conf.d/zz-local.ini
   nginx:
     volumes:
       - .:/code

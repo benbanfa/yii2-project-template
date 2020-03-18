@@ -15,13 +15,17 @@ RUN { \
         echo "group = ${DEV_GID}"; \
     } | tee /usr/local/etc/php-fpm.d/zz-zz.conf
 
+RUN cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
+
+COPY ./phpxdbg /usr/local/bin/phpxdbg
+
 # 设置 Composer 工作目录
 ENV COMPOSER_HOME /tmp/composer
 RUN mkdir $COMPOSER_HOME && \
     chown ${DEV_UID}:${DEV_GID} $COMPOSER_HOME
 
-WORKDIR /code
-
 COPY ./entrypoint.sh /usr/local/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+
+WORKDIR /code

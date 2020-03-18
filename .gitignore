@@ -26,14 +26,15 @@ phpunit.phar
 # vagrant runtime
 /.vagrant
 
-/app.vars
-
 /.docker-sync
 /.env
 /docker-compose.*.yml
 
-/vendor
+/php-local.ini
 
 .php_cs.cache
 
+/vendor
+
+/app.env
 /config/params-local.php

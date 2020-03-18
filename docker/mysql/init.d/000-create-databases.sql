@@ -1,11 +1,11 @@
-CREATE DATABASE IF NOT EXISTS `app`;
+CREATE DATABASE IF NOT EXISTS `db_app`;
 
-CREATE USER 'app_user'@'%' IDENTIFIED BY 'app_pass';
+CREATE USER 'db_app_user'@'%' IDENTIFIED BY 'db_app_pass';
 
-GRANT ALL ON `app`.* TO 'app_user'@'%';
+GRANT ALL ON `db_app`.* TO 'db_app_user'@'%';
 
-CREATE DATABASE IF NOT EXISTS `app_test`;
+CREATE DATABASE IF NOT EXISTS `db_test`;
 
-CREATE USER 'app_test_user'@'%' IDENTIFIED BY 'app_test_pass';
+CREATE USER 'db_test_user'@'%' IDENTIFIED BY 'db_test_pass';
 
-GRANT ALL ON `app_test`.* TO 'app_test_user'@'%';
+GRANT ALL ON `db_test`.* TO 'db_test_user'@'%';

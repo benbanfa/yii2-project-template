@@ -1,6 +1,6 @@
 #!/bin/sh
 set -e
 
-crontab -u dev /code/docker/php/crontab
+crontab -u dev /usr/local/etc/cron/app
 
 exec "$@"

@@ -32,11 +32,14 @@ services:
       args:
         DEV_GID: ${DEV_GID}
         DEV_UID: ${DEV_UID}
+    environment:
+      PHP_IDE_CONFIG: ${DEV_IDE_CONFIG}
     networks:
       - project
     volumes:
       - ./docker/php/supervisord.conf:/etc/supervisord.conf
       - composer_home:/tmp/composer
+      - ./docker/php/crontab:/usr/local/etc/cron/app
   nginx:
     image: nginx:1.14.2-alpine
     command: /bin/sh -c "envsubst '$$DEV_DOMAIN' < /code/docker/nginx/sites.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
